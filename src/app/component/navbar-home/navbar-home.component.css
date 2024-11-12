@@ -1,0 +1,34 @@
+mat-toolbar {
+    background-color: #FBC43C;
+    color: #FFF9EB;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-icon {
+    font-size: 24px;
+    color: #FFF9EB;
+  }
+  
+  button.mat-button {
+    color: #FFF9EB; /* Color del texto de los botones */
+  }
+  
+  .perfil-button {
+    background-color: #833DE7; /* Color de fondo del botón de Perfil */
+    color: #FFF9EB !important;  /* Color del texto en el botón de Perfil */
+    border-radius: 12px; /* Bordes curvos */
+    padding: 4px 12px;
+    margin-left: 8px;
+  }
+
+  mat-toolbar img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    object-fit: contain; /* Para asegurarte de que la imagen se ajuste al tamaño sin distorsionarse */
+  }
+  

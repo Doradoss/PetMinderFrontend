@@ -1,0 +1,20 @@
+<mat-toolbar>
+    <!-- Logo en lugar de texto "Huertas" -->
+    <img src="/petminder/public/img/petminder_logo1.png" alt="img" style="width: 40px; height: 40px; margin-right: 10px;">
+  
+    <span class="example-spacer"></span>
+    
+    <!-- Botones de navegación -->
+    <button mat-button routerLink="/mascota-list">Inicio</button>
+    <button mat-button routerLink="/mascotas">Mascotas</button>
+    <button mat-button routerLink="/mascota-list">Recordatorios</button>
+  
+    <!-- Icono para Notificaciones -->
+    <button mat-icon-button routerLink="/mascota-list" aria-label="Notificaciones">
+      <mat-icon>notifications</mat-icon>
+    </button>
+  
+    <!-- Botón de perfil con bordes curvos -->
+    <button mat-button routerLink="/mascota-list" class="perfil-button">Perfil</button>
+  </mat-toolbar>
+  
