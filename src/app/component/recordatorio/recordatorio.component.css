@@ -1,0 +1,25 @@
+.sidenav-container {
+    height: 100vh;
+  }
+  
+  .card {
+    display: flex;
+    background-color: yellow;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .mascota-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  
+  button[mat-icon-button] {
+    margin: 0 4px;
+  }

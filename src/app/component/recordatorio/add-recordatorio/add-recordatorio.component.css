@@ -1,0 +1,50 @@
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Alinea los campos a la izquierda */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: purple;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Hace que el formulario ocupe el 100% del ancho disponible */
+    max-width: 500px; /* Limita el ancho máximo */
+}
+
+.titulo {
+    width: 100%;
+    text-align: left;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    width: 100%;  /* Hace que el contenedor de cada campo ocupe todo el ancho disponible */
+    margin-bottom: 20px;  /* Espacio entre campos */
+}
+
+label {
+    color: white; /* Color blanco para los labels */
+    font-weight: bold;
+    margin-bottom: 5px; /* Espacio entre el label y el campo */
+    display: block;  /* Asegura que el label esté fuera del cuadro */
+}
+
+mat-form-field {
+    width: 100%;  /* Hace que los campos de formulario ocupen todo el ancho disponible */
+    margin-bottom: 20px; /* Agrega espacio entre los campos */
+}
+
+.boton-agregar {
+    background-color: orange;  /* Naranja */
+    color: white;               /* Color de texto blanco */
+    width: 150px;               /* Hacemos el botón corto */
+    align-self: flex-end;       /* Alineamos el botón a la derecha */
+    margin-top: 10px;           /* Espacio por encima */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.boton-agregar:hover {
+    background-color: darkorange; /* Efecto al pasar el ratón */
+}

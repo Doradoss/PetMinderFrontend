@@ -1,0 +1,40 @@
+<h3>Recordatorio - {{title}} </h3>
+<h3> {{day}} </h3>
+
+<div class="forms">
+    <h5 class="titulo">Registrar recordatorio</h5>
+    
+    <div class="form-group">
+        <label for="titulo">Título</label>
+        <mat-form-field>
+            <input matInput id="titulo" placeholder="Ingrese el título del recordatorio">
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <mat-form-field>
+            <textarea matInput id="descripcion" placeholder="Ingrese la descripción"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" id="fecha" placeholder="Selecciona una fecha">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <label for="hora">Hora</label>
+        <mat-form-field>
+            <input matInput type="time" id="hora" placeholder="Selecciona una hora">
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button class="boton-agregar">Agregar recordatorio</button>
+</div>
+
+<router-outlet></router-outlet>
