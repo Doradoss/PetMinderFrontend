@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list-mascotas',
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule
   ]
 })
 export class ListMascotasComponent implements OnInit {
@@ -35,7 +37,8 @@ export class ListMascotasComponent implements OnInit {
 
   constructor(
     private mascotaService: MascotaService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -63,6 +66,6 @@ export class ListMascotasComponent implements OnInit {
   editMascota(id: number): void {
     // Redirect to edit page with the ID of the pet
     // For now, you could navigate to an edit form
-    console.log('Editar mascota', id);
+    this.router.navigate(['/mascota-edit', id]);
   }
 }

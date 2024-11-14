@@ -38,14 +38,17 @@ export class LoginComponent implements OnInit {
     let request = new JwtRequest();
     request.username = this.username;
     request.password = this.password;
+  
     this.loginService.login(request).subscribe(
-      (data: any) => {
-        sessionStorage.setItem('token', data.jwttoken);
-        this.router.navigate(['/dashboard']);
+      (response: any) => {
+        // Guarda el token en sessionStorage
+        sessionStorage.setItem('token', response.token);
+        this.snackBar.open('Login exitoso', 'Cerrar', { duration: 3000 });
+        // Redirige a una página segura después de iniciar sesión, por ejemplo, al listado de mascotas
+        this.router.navigate(['/mascota-list']);
       },
-      (error) => {
-        this.mensaje = 'Credenciales incorrectas!!!';
-        this.snackBar.open(this.mensaje, 'Aviso', { duration: 2000 });
+      error => {
+        this.snackBar.open('Error en el login', 'Cerrar', { duration: 3000 });
       }
     );
   }

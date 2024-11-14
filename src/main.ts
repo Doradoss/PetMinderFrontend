@@ -9,12 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './app/component/login/login.component';
+import { HomeComponent } from './app/component/home/home.component';
 
 const routes: Route[] = [
   {path: 'mascota-list', component: ListMascotasComponent},
   {path: 'mascota-add', component: UpdtMascotasComponent},
   {path: 'mascota-edit/:id', component: UpdtMascotasComponent},
-  {path: 'home', component: AppComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ]

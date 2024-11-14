@@ -9,7 +9,7 @@
   
   <!-- Botón de Mascotas con menú desplegable -->
   <div class="mascotas-menu" (mouseenter)="mostrarMenu()" (mouseleave)="ocultarMenu()">
-    <button mat-button>Mascotas</button>
+    <button mat-button routerLink="/mascota-list">Mascotas</button>
     <div class="submenu" *ngIf="mostrarMascotas">
       <div *ngFor="let mascota of mascotas" class="submenu-item">
         <span>{{ mascota.nombre }}</span>
@@ -25,10 +25,10 @@
   <button mat-button routerLink="/recordatorios-list">Recordatorios</button>
 
   <!-- Icono para Notificaciones -->
-  <button mat-icon-button routerLink="/mascota-list" aria-label="Notificaciones">
+  <button mat-icon-button routerLink="/mascota-add" aria-label="Notificaciones">
     <mat-icon>notifications</mat-icon>
   </button>
 
   <!-- Botón de perfil con bordes curvos -->
-  <button mat-button routerLink="/mascota-list" class="perfil-button">Perfil</button>
+  <button mat-button routerLink="/login" class="perfil-button">Perfil</button>
 </mat-toolbar>
