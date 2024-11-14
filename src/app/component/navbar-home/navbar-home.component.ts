@@ -20,5 +20,32 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './navbar-home.component.css'
 })
 export class NavbarHomeComponent {
+  mostrarMascotas = false;
+  mascotas = [
+    { id: 1, nombre: 'Firulais' },
+    { id: 2, nombre: 'Puchi' }
+  ];
+  mostrarMenu() {
+    this.mostrarMascotas = true;
+  }
 
+  ocultarMenu() {
+    this.mostrarMascotas = false;
+  }
+
+  editarMascota(id: number) {
+    console.log('Editar mascota con ID:', id);
+    // Agrega aquí la lógica para editar la mascota
+  }
+
+  agregarMascota() {
+    console.log('Agregar nueva mascota');
+    // Agrega aquí la lógica para agregar una nueva mascota
+  }
+
+  eliminarMascota(id: number) {
+    console.log('Eliminar mascota con ID:', id);
+    // Agrega aquí la lógica para eliminar la mascota
+  }
 }
+

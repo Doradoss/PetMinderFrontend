@@ -1,20 +1,34 @@
 <mat-toolbar>
-    <!-- Logo en lugar de texto "Huertas" -->
-    <img src="/img/petminder_logo1.png" alt="logo_petminder" style="width: 170px; height: 40px; margin-right: 10px;">
+  <!-- Logo -->
+  <img src="/img/petminder_logo1.png" alt="logo_petminder" style="width: 170px; height: 40px; margin-right: 10px;">
 
-    <span class="example-spacer"></span>
-    
-    <!-- Botones de navegación -->
-    <button mat-button routerLink="/home">Inicio</button>
-    <button mat-button routerLink="/mascota-list">Mascotas</button>
-    <button mat-button routerLink="/recordatorios-list">Recordatorios</button>
+  <span class="example-spacer"></span>
   
-    <!-- Icono para Notificaciones -->
-    <button mat-icon-button routerLink="/mascota-list" aria-label="Notificaciones">
-      <mat-icon>notifications</mat-icon>
-    </button>
+  <!-- Botones de navegación -->
+  <button mat-button routerLink="/home">Inicio</button>
   
-    <!-- Botón de perfil con bordes curvos -->
-    <button mat-button routerLink="/mascota-list" class="perfil-button">Perfil</button>
-  </mat-toolbar>
+  <!-- Botón de Mascotas con menú desplegable -->
+  <div class="mascotas-menu" (mouseenter)="mostrarMenu()" (mouseleave)="ocultarMenu()">
+    <button mat-button>Mascotas</button>
+    <div class="submenu" *ngIf="mostrarMascotas">
+      <div *ngFor="let mascota of mascotas" class="submenu-item">
+        <span>{{ mascota.nombre }}</span>
+        <mat-icon class="icono-editar" (click)="editarMascota(mascota.id)">edit</mat-icon>
+        <mat-icon class="icono-eliminar" (click)="eliminarMascota(mascota.id)">delete</mat-icon>
+      </div>
+      <button mat-menu-item class="agregar-mascota" (click)="agregarMascota()">
+        <mat-icon>add</mat-icon> Agregar mascota
+      </button>
+    </div>
+  </div>
   
+  <button mat-button routerLink="/recordatorios-list">Recordatorios</button>
+
+  <!-- Icono para Notificaciones -->
+  <button mat-icon-button routerLink="/mascota-list" aria-label="Notificaciones">
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <!-- Botón de perfil con bordes curvos -->
+  <button mat-button routerLink="/mascota-list" class="perfil-button">Perfil</button>
+</mat-toolbar>
