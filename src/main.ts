@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RecordatorioComponent } from './app/component/recordatorio/recordatorio.component';
 import { AddRecordatorioComponent } from './app/component/recordatorio/add-recordatorio/add-recordatorio.component';
+import { TiporecordatorioComponent } from './app/component/tiporecordatorio/tiporecordatorio.component';
 
 const routes: Route[] = [
   {path: 'mascota-list', component: ListMascotasComponent},
@@ -18,7 +19,9 @@ const routes: Route[] = [
   {path: 'mascota-edit/:id', component: UpdtMascotasComponent},
   {path: '', redirectTo: '/mascota-list', pathMatch: 'full'},
   {path: 'recordatorio',component: RecordatorioComponent},
-  {path: 'recordatorio/recordatorio-add', component:AddRecordatorioComponent}
+  {path: 'recordatorio/recordatorio-add', component:AddRecordatorioComponent},
+  {path: 'tiporecordatorio',component:TiporecordatorioComponent}
+  
 ]
 
 bootstrapApplication(AppComponent, {

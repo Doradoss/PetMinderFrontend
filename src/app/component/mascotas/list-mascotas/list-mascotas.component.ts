@@ -28,7 +28,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ListMascotasComponent implements OnInit {
   mascotas: Mascota[] = [];
-  displayedColumns: string[] = ['nombre', 'especie', 'edad', 'raza', 'propietario', 'opciones'];
+  displayedColumns: string[] = ['id', 'nombre', 'especie', 'edad', 'raza', 'opciones'];
   filteredMascotas = new MatTableDataSource<Mascota>(this.mascotas);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -36,19 +36,36 @@ export class ListMascotasComponent implements OnInit {
   constructor(
     private mascotaService: MascotaService,
     private snackBar: MatSnackBar
-  ) {}
+
+  ) { }
 
   ngOnInit(): void {
-    this.mascotaService.getMascotas().subscribe(data => {
+
+    this.mascotaService.getTodasMascotas(2).subscribe(data => {
       this.mascotas = data;
+      console.log(this.mascotas);
       this.filteredMascotas.data = this.mascotas;
       this.filteredMascotas.paginator = this.paginator;
     });
   }
 
+  /*
+  this.mascotaService.getMascotas().subscribe((mascotas) => {
+      this.mascotas = mascotas.map((mascota: Mascota) => ({
+        idMascota: mascota.idMascota, // Ajusta según el nombre real de la propiedad
+        especie: mascota.especie,
+        nombre: mascota.nombre,
+        edad: mascota.edad,
+        usuario_id: mascota.usuario_id,
+        historialMedico: mascota.historialMedico
+      }))
+    }
+    );
+  */
+
   deleteMascota(id: number): void {
     this.mascotaService.deleteMascota(id).subscribe(() => {
-      this.mascotas = this.mascotas.filter(mascota => mascota.idMascota !== id);
+      this.mascotas = this.mascotas.filter(mascota => mascota.id !== id);
       this.filteredMascotas.data = this.mascotas;
       this.snackBar.open('Mascota eliminada con éxito', 'Cerrar', {
         duration: 3000,
