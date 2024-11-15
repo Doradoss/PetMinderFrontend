@@ -9,7 +9,7 @@ import { Mascota } from '../model/Mascota';
   providedIn: 'root'
 })
 export class MascotaService {
-  private apiURL = 'http://localhost:8080/api/user';
+  private apiURL = 'http://localhost:8081/api/user';
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class MascotaService {
     return this.http.get<Mascota[]>(`${this.apiURL}/findall-mascota`);
   }
 
-  getMascota(id: number): Observable<Mascota> {
+  getMascota(id: number): Observable<Mascota> {  // trae la mascota por id de la mascota
     return this.http.get<Mascota>(`${this.apiURL}/mascota/${id}`);
   }
 
@@ -26,10 +26,14 @@ export class MascotaService {
   }
 
   updateMascota(mascota: Mascota): Observable<Mascota> {
-    return this.http.put<Mascota>(`${this.apiURL}/actualizar-mascota/${mascota.idMascota}`, mascota);
+    return this.http.put<Mascota>(`${this.apiURL}/actualizar-mascota/${mascota.id}`, mascota);
   }
 
   deleteMascota(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiURL}/eliminar-mascota/${id}`);
+  }
+
+  getTodasMascotas(id:number) : Observable<Mascota[]> { //Trae todas las mascotas de un usuario
+    return this.http.get<Mascota[]>(`${this.apiURL}/usuario/${id}`);
   }
 }

@@ -1,0 +1,98 @@
+.form-container {
+    margin: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container label {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .form-container input {
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px; /* Limitar el ancho */
+  }
+  
+  /* Estilo para el botón de agregar o actualizar */
+  .form-container button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #FBC43C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center; /* Centra el botón */
+    font-size: 14px;
+  }
+  
+  .form-container button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilo para la lista de tipos de recordatorio */
+  .list-container {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .list-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .list-container li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+  }
+  
+  .list-container li span {
+    flex-grow: 1;
+    font-size: 16px;
+  }
+  
+  .list-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .list-container button:hover {
+    opacity: 0.7;
+  }
+  
+  .list-container button.edit {
+    color: #4CAF50;
+  }
+  
+  .list-container button.delete {
+    color: #f44336;
+  }
+  
+  .list-container .icon {
+    font-size: 18px;
+  }
+  
+  /* Agregar estilo para los iconos */
+  .list-container button.edit .material-icons,
+  .list-container button.delete .material-icons {
+    font-size: 20px;
+  }

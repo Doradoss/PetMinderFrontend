@@ -4,6 +4,7 @@
 <div class="forms">
     <h5 class="titulo">Registrar recordatorio</h5>
     
+    <!-- Título -->
     <div class="form-group">
         <label for="titulo">Título</label>
         <mat-form-field>
@@ -11,6 +12,7 @@
         </mat-form-field>
     </div>
 
+    <!-- Descripción -->
     <div class="form-group">
         <label for="descripcion">Descripción</label>
         <mat-form-field>
@@ -18,6 +20,7 @@
         </mat-form-field>
     </div>
 
+    <!-- Fecha -->
     <div class="form-group">
         <label for="fecha">Fecha</label>
         <mat-form-field>
@@ -27,6 +30,7 @@
         </mat-form-field>
     </div>
 
+    <!-- Hora -->
     <div class="form-group">
         <label for="hora">Hora</label>
         <mat-form-field>
@@ -34,7 +38,25 @@
         </mat-form-field>
     </div>
 
-    <button mat-raised-button class="boton-agregar">Agregar recordatorio</button>
+    <!-- Tipo de recordatorio -->
+    <div class="form-group">
+        <label for="tipoRecordatorio">Tipo de Recordatorio</label>
+        <mat-form-field>
+          <mat-select [(ngModel)]="recordatorio.tipoRecordatorioId" id="tipoRecordatorio" placeholder="Selecciona un tipo de recordatorio">
+            <mat-option *ngFor="let tipo of tiposRecordatorio" [value]="tipo.id">
+              {{ tipo.nombre }}  <!-- Asegúrate de que 'nombre' sea el campo que deseas mostrar -->
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- Completado -->
+    <div class="form-group">
+        <mat-checkbox [(ngModel)]="recordatorio.completado" id="completado">Completado</mat-checkbox>
+    </div>
+
+    <!-- Botón de agregar -->
+    <button mat-raised-button class="boton-agregar" (click)="registrarRecordatorio()">Agregar recordatorio</button>
 </div>
 
 <router-outlet></router-outlet>
