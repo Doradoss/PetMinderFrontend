@@ -48,7 +48,7 @@ export class ListMascotasComponent implements OnInit {
 
   deleteMascota(id: number): void {
     this.mascotaService.deleteMascota(id).subscribe(() => {
-      this.mascotas = this.mascotas.filter(mascota => mascota.idMascota !== id);
+      this.mascotas = this.mascotas.filter(mascota => mascota.id !== id);
       this.filteredMascotas.data = this.mascotas;
       this.snackBar.open('Mascota eliminada con éxito', 'Cerrar', {
         duration: 3000,
