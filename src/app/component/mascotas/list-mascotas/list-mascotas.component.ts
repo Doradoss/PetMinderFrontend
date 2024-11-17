@@ -32,7 +32,6 @@ import { NavbarHomeComponent } from '../../navbar-home/navbar-home.component';
 })
 export class ListMascotasComponent implements OnInit {
   mascotas: Mascota[] = [];
-  //Se editó esto para el desglose por especie de mascota
   displayedColumns: string[] = ['nombre', 'especie', 'raza','edad','propietario', 'opciones'];
   filteredMascotas = new MatTableDataSource<Mascota>(this.mascotas);
 
