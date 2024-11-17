@@ -33,6 +33,7 @@ import { NavbarHomeComponent } from '../../navbar-home/navbar-home.component';
 
 export class UpdtMascotasComponent implements OnInit {
   mascotaForm: FormGroup;
+   //Se editó esto para el desglose por especie de mascota
   especies = ['Perro', 'Gato', 'Ave', 'Conejo', 'Hamster'];
   isEditing: boolean = false;
 
