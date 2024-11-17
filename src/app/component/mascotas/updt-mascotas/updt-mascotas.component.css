@@ -1,0 +1,50 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #833DE7;
+    border-radius: 12px;
+    padding: 24px;
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    color: #FFFFFF;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #f3e8ff;
+    border-radius: 8px;
+    color: #000000;
+}
+
+::ng-deep .mat-form-field-placeholder {
+    color: rgba(0, 0, 0, 0.6); /* Texto guía con opacidad */
+}
+
+button {
+    width: 100%;
+    border-radius: 8px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+button.registrar {
+    background-color: #FBC43C;
+    color: #333333;
+}
+
+button.cancelar {
+    background-color: red;
+    color: white;
+}
+
+.titulo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 16px;
+}

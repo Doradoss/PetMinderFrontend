@@ -1,0 +1,25 @@
+<app-navbar-home/>
+<div class="dietas-container">
+  <div class="titulo">Listado de Dietas</div>
+
+  <div *ngFor="let dieta of filteredDietas.data" class="dieta-card">
+    <div class="dieta-info">
+      <div class="dieta-nombre">
+        {{ dieta.nombre }} ({{ dieta.fecha_creacion | date: 'shortDate' }})
+      </div>
+      <div class="dieta-indicaciones">
+        {{ dieta.indicaciones }}
+      </div>
+    </div>
+    <div class="dieta-actions">
+      <button mat-icon-button color="warn" (click)="deleteDieta(dieta.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" [routerLink]="['/dieta-edit', dieta.id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <button mat-button routerLink="/dieta-add" class="add-dieta-button">Agregar dieta</button>
+</div>

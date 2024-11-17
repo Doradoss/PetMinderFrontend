@@ -1,0 +1,36 @@
+<app-navbar-home/>
+<div style="background-color: #9c27b0; padding: 20px; border-radius: 12px; width: 80%; max-width: 600px; margin: auto;">
+  <div style="font-size: 24px; font-weight: bold; color: white; text-align: center; margin-bottom: 20px;">
+    Agregar Dietas
+  </div>
+  
+  <form [formGroup]="dietaForm" (ngSubmit)="onSubmit()">
+    <!-- Nombre de la dieta -->
+    <mat-form-field appearance="fill" style="background-color: white; border-radius: 8px; margin-bottom: 20px; width: 100%;">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+      <mat-error *ngIf="dietaForm.get('nombre')?.hasError('required')">
+        El nombre es un campo <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="dietaForm.get('nombre')?.hasError('minlength')">
+        El nombre debe tener al menos <strong>3 caracteres</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Indicaciones -->
+    <mat-form-field appearance="fill" style="background-color: white; border-radius: 8px; width: 100%;">
+      <mat-label>Indicaciones</mat-label>
+      <input matInput formControlName="indicaciones" />
+      <mat-error *ngIf="dietaForm.get('indicaciones')?.hasError('required')">
+        Indicaciones es un campo <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    
+    <!-- Botón de Registrar -->
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      <button mat-raised-button color="accent" type="submit" [disabled]="dietaForm.invalid" style="background-color: #fdd835; color: black;">
+        Agregar dieta
+      </button>
+    </div>
+  </form>
+</div>
