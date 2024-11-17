@@ -8,23 +8,26 @@
   <button mat-button routerLink="/home">Inicio</button>
   
 
-  
-   <!--Se añadió esto para el desglose por especie de mascota -->
+  <!--Se añadió esto para el despliegue de especies de mascota-->
   <div class="mascotas-menu" (mouseenter)="mostrarMenu()" (mouseleave)="ocultarMenu()">
     <button mat-button routerLink="/mascota-list">Mascotas</button>
     <div class="submenu" *ngIf="mostrarMascotas">
+      
       <!-- Mostrar las especies únicas con su cantidad y su ícono -->
       <div *ngFor="let especie of especiesUnicas" class="submenu-item">
         <img [src]="obtenerIconoPorEspecie(especie)" alt="{{ especie }}" style="width: 30px; height: 30px; margin-right: 10px;">
         <span class="especie">{{ especie }}</span>
         <span class="cantidad">{{ contarMascotasPorEspecie(especie) }}</span>
       </div>
+      
+      <button mat-icon-button (click)="actualizarMascotas()" class="actualizar-btn">
+        <img src="/img/reset.png" alt="Actualizar" style="width: 20px; height: 20px;">
+        <span class="actualizar-lbl">Actualizar Registros</span>
+      </button>
     </div>
   </div>
-  <!--Se añadió esto para el desglose por especie de mascota -->
-
-
-
+ <!--Se añadió esto para el despliegue de especies de mascota-->
+  
 
   <button mat-button routerLink="/recordatorios-list">Recordatorios</button>
   <button mat-button routerLink="/dieta-list">Dietas</button>
@@ -37,4 +40,3 @@
   <!-- Botón de perfil con bordes curvos -->
   <button mat-button routerLink="/login" class="perfil-button">Perfil</button>
 </mat-toolbar>
-s
