@@ -29,85 +29,36 @@ mat-toolbar {
     position: relative;
   }
   
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #6A1B9A; /* Fondo morado */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-  }
+  
   
   .mascotas-menu:hover .submenu {
-    display: block; /* Muestra el menú al hacer hover */
+    display: block; 
   }
   
-  .submenu-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 0;
-    cursor: pointer;
-  }
+  
   
   .submenu-item:hover {
-    background-color: #5A1284; /* Color morado oscuro al hacer hover */
+    background-color: #6a1b9a; /* Color morado oscuro al hacer hover */
+    padding: 12px 16px; /* Espaciado ampliado al hacer hover */
+    border-radius: 10px; /* Bordes un poco más redondeados */
+    transition: background-color 0.3s ease, padding 0.3s ease;
   }
   
   .submenu-item span {
     color: white;
   }
   
-  .icono-editar {
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .agregar-mascota {
-    display: flex;
-    align-items: center;
-    color: white;
-    margin-top: 10px;
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-  
-  .agregar-mascota mat-icon {
-    margin-right: 5px;
-  }
-  .submenu {
-    display: block;
-    padding: 10px;
-  }
-  
-  .submenu-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 5px 0;
-  }
-  
-  .icono-editar,
-  .icono-eliminar {
-    margin-left: 10px;
-    cursor: pointer;
-  }
-
-  /* Se añadió esto para el desglose por especie de mascota*/
 
   .submenu-item {
     display: flex;
     align-items: center;
-    justify-content: flex-start; 
-    margin-bottom: 10px;
-    width: 100%; 
+    justify-content: space-between; /* Mantiene el espacio entre los elementos */
+    padding: 8px 12px; /* Espaciado normal */
+    margin: 4px 0; /* Espacio entre los items */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: transparent; /* Sin fondo por defecto */
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Animación suave */
+    box-sizing: border-box;
   }
   
   .submenu-item img {
@@ -119,11 +70,56 @@ mat-toolbar {
   .submenu-item .especie {
     flex-grow: 1; 
     text-align: left;
-    font-size: 17px;
+    font-size: 12px;
   }
   
   .submenu-item .cantidad {
-    font-size: 17px;
+    font-size: 12px;
     text-align: right; 
     margin-left: 10px;
   }
+
+  .submenu {
+    background-color: #833DE7;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+   /* Fondo morado */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .actualizar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Espaciado entre el icono y el texto */
+    margin-top: 10px; /* Ajusta según sea necesario */
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Haz que ocupe todo el ancho si es necesario */
+  }
+  
+  .actualizar-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .actualizar-lbl {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF9EB; /* Ajusta según el diseño */
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+
+ 
+  
+
